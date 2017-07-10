@@ -9,6 +9,7 @@ export class UserService {
   ) {}
 
   getUser() {
+    
     return this.http.get(`https://conduit.productionready.io/api/profiles/eric`)
     .map((res:Response) => res.json());
   }

@@ -23,11 +23,13 @@ import { Ng2CompleterModule } from "ng2-completer";
 
 import { MyComponent } from "./mycomponent.component";
 
+import { UserService } from "./user.service";
+
 @NgModule({
   imports: [BrowserModule, 
   FormsModule, MyDatePickerModule, HttpModule,Ng2AutoCompleteModule,Ng2CompleterModule],
   declarations: [AppComponent, AfiliadoComponent,MyComponent],
   bootstrap: [AppComponent],
-  providers:[AfiliadoService]
+  providers:[AfiliadoService,UserService]
 })
 export class AppModule { }
