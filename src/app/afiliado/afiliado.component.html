@@ -1,0 +1,56 @@
+
+<div class="container">
+
+  <h1>ABM Afiliado</h1>
+
+<!-- Con #afiliadoForm="ngForm" referencio a todo el formulario -->
+
+  <form #afiliadoForm="ngForm" (ngSubmit)="onSubmit()">
+    {{diagnostic}}
+
+    <div class="form-group">
+      <label for="buscar">Buscar</label>
+<!--
+      <input type="text" class="form-control" id="buscar" 
+        required name="buscar" placeholder="Buscar Por nombre o Codigo" >-->
+         
+    <!--     <input auto-complete [(ngModel)]="myData" [source]="mySource" />-->
+
+-      <!--   <div ng2-auto-complete [source]="arrayOfStrings" (valueChanged)="valueChanged($event)"
+            placeholder="Buscar por codigo o nombre">
+            <input [ngModel]="model1" />
+    </div>        -->
+
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <!-- El atributo "name" se usa para indicarle a angular que esta dentro de un form -->
+      <input type="text" class="form-control" id="nombre" 
+        [(ngModel)]="afiliado.nombre" required name="nombre" placeholder="Nombre" #spy>
+        <br>TODO: remove this: {{spy.className}}
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" id="direccion" name="direccion" 
+        [(ngModel)]="afiliado.direccion" placeholder="Direccion">
+    </div>
+
+    <div class="form-group">
+      <label for="fechaNacimiento">Fecha Nacimiento</label>
+      <my-date-picker name="fechaNacimiento" [options]="myDatePickerOptions" 
+        [(ngModel)]="fechaNacimiento" required></my-date-picker>
+    </div>
+
+   <div class="form-group">
+      <label for="numeroDocumento">Documento</label>
+      <input type="text" class="form-control" id="numeroDocumento" name="numeroDocumento" 
+        [(ngModel)]="afiliado.numeroDocumento" placeholder="N documento">
+    </div>
+
+  <button type="submit" [disabled]="!afiliadoForm.form.valid">Submit</button>
+
+  </form>
+
+</div>
