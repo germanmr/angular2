@@ -17,41 +17,38 @@ import { UserService } from "./user.service";
           <p>Custom data provider. Seinfeld episodes data from <a href="https://mysafeinfo.com/">mysafeinfo.com</a>
           </p>
 
-            <div class="card">
-              <div class="card-block">
-                <div class="form-group row">
-                  <div class="col-5">
-                    <ng2-completer [(ngModel)]="seinfeldEpisode" [datasource]="customData" [minSearchLength]="3"
-                                  [inputClass]="'form-control'"
-                                  [placeholder]="'search Seinfeld episode'" [textSearching]="'Please wait...'">
-                    </ng2-completer>
-                  </div>
-                  <div class="col-6">
-                    <p class="form-control-static"><b> {{seinfeldEpisode}}</b></p>
-                  </div>
+          <div class="card">
+            <div class="card-block">
+              <div class="form-group row">
+                <div class="col-5">
+                  <ng2-completer [(ngModel)]="seinfeldEpisode" [datasource]="customData" [minSearchLength]="3"
+                                [inputClass]="'form-control'"
+                                [placeholder]="'search Seinfeld episode'" [textSearching]="'Buscando coincidencias...'">
+                  </ng2-completer>
+                </div>
+                <div class="col-6">
+                  <p class="form-control-static"><b> {{seinfeldEpisode}}</b></p>
                 </div>
               </div>
             </div>
-            <div>
-              <button (click)="loadUser()">Load profile</button>
-              {{ profile | json }}
-            </div>
-          
-          
+          </div>
+          <div>
+            <button (click)="loadUser()">Load profile</button>
+            {{ profile | json }}
+          </div>
             `
 })
 export class MyComponent {
 
   profile = {};
 
-  loadUser() {
-    this.userService.getUser().subscribe(data => this.profile = data);
-  }
-
   private customData: CustomData;
 
-  constructor(completerService: CompleterService, http: Http,private userService: UserService) {
+  constructor(completerService: CompleterService, http: Http, private userService: UserService) {
     this.customData = new CustomData(http);
   }
 
+  loadUser() {
+    this.userService.getUser().subscribe(data => this.profile = data);
+  }
 }

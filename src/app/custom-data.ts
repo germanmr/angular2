@@ -6,6 +6,11 @@ import { CompleterData, CompleterItem } from "ng2-completer";
 export class CustomData extends Subject<CompleterItem[]> implements CompleterData {
     
     private urlBusqueda="";
+
+    private urlBase="https://www.amr.org.ar/AutorizadorWeb/api/v3/";
+    // profesional/
+    // profesionmatricula?codigoProfesion=1&matriculaProfesional="+term+"&buscaSoloHabilitados=true
+    // Parametros
     
     constructor(private http: Http) {
         super();
