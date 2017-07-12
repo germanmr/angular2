@@ -28,7 +28,10 @@
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'mydatepicker': 'npm:mydatepicker/bundles/mydatepicker.umd.min.js',
-       'ng2-completer': 'node_modules/ng2-completer/ng2-completer.umd.js'
+       //'angular2-rest-client': 'npm:angular2-rest-client/bundles/index.umd.js',
+       'ng2-completer': 'node_modules/ng2-completer/ng2-completer.umd.js',
+       'ngx-resource':  'node_modules/ngx-resource/bundles/ngx-resource.umd.js',
+        'reflect-metadata': 'npm:reflect-metadata/Reflect.js'
        
 
     },

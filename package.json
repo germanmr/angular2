@@ -39,10 +39,12 @@
     "@angular/upgrade": "~4.2.1",
     "angular-forms": "0.0.1",
     "angular-in-memory-web-api": "~0.3.2",
+    "angular2-rest-client": "^2.1.1",
     "core-js": "^2.4.1",
     "mydatepicker": "^2.0.22",
     "ng2-auto-complete": "^0.12.0",
     "ng2-completer": "^1.5.2",
+    "ngx-resource": "^3.2.2",
     "rxjs": "^5.1.0",
     "systemjs": "0.19.39",
     "zone.js": "^0.8.4"

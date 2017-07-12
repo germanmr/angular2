@@ -25,11 +25,17 @@ import { MyComponent } from "./mycomponent.component";
 
 import { UserService } from "./user.service";
 
+import { ResourceModule } from "ngx-resource";
+
+import { NewsRes } from "./NewsRes";
+
+import { BookService } from "./book.service";
+
 @NgModule({
-  imports: [BrowserModule, 
-  FormsModule, MyDatePickerModule, HttpModule,Ng2AutoCompleteModule,Ng2CompleterModule],
+  imports: [BrowserModule, FormsModule, MyDatePickerModule,
+    HttpModule,Ng2AutoCompleteModule,Ng2CompleterModule,ResourceModule],
   declarations: [AppComponent, AfiliadoComponent,MyComponent],
   bootstrap: [AppComponent],
-  providers:[AfiliadoService,UserService]
+  providers:[AfiliadoService,UserService,NewsRes,BookService]
 })
 export class AppModule { }
